@@ -3,7 +3,13 @@ from bs4 import BeautifulSoup
 import time
 from tkinter import Tk
 from selenium.webdriver.common.keys import Keys
+import sqlite3
+import database
 driver = webdriver.Chrome('c:/Users/matthew/Desktop/Trello/chromedriver2.exe')
+#database.openDataBaseConnection()
+#database.unitTest()
+#database.displayDataBase()
+#database.closeDataBaseConnection()
 def login():
     driver.get("https://anresco.qbench.net/")
     google = driver.find_element_by_id("qbenchGoogleLoginLink")
@@ -58,15 +64,15 @@ def getTests(sampleID):
     return testText
 
 def getDueDate(order):
-    driver.get("https://anresco.qbench.net/order?id=" + "502664")
+    driver.get("https://anresco.qbench.net/order?id=" + order)
     time.sleep(1)
     date = driver.find_element_by_id("qbenchOrderDateRequired")
     date.send_keys(Keys.CONTROL + "a")
     date.send_keys(Keys.CONTROL + "c")
     time.sleep(1)
     date = Tk().clipboard_get()
-    Tk().destroy()
-    print(date)
+  
+    return date
 #def addOrderToDB():
     #add order number to db
     
@@ -86,7 +92,7 @@ login()
 #getOrders()
 time.sleep(1)
 #getOrderSamples(getMostRecentOrder())
-getTests(0)
-time.sleep(5)
-getDueDate(100)
+#getTests(0)
+#time.sleep(5)
+#getDueDate(100)
 #driver.quit()

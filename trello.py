@@ -2,6 +2,8 @@ import urllib.request
 from bs4 import BeautifulSoup
 import requests
 import random
+import database
+import sqlite3
 key = "f5b27409aaeb693cdd28d15cd63c8474"
 token = "5c342876d76de7617084008db01841cb252018a11462ae4968df20403c78160b"
 
@@ -43,10 +45,21 @@ def unitTest():
     rand = str(random.randint(1,1000))
     makeCard("1999" + rand, "2018-10-01")
 
-unitTest()
+#unitTest()
+
+def grabData():
+    cursor = database.displayDataBase()
+    for row in cursor:
+       print ("It = ", row[0])
+       print ("Freaking = ", row[1])
+       print ("Worked = ", row[2])
+       print ("OMG = ", row[3])
+       print ("Python = ", row[4])
+       print ("Rocks", row[5], "\n")
+    print (cursor)
 
     
-
+grabData()
 #make card
 #make tests checklist
 #get sample id

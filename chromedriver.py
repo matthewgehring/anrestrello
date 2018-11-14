@@ -25,7 +25,7 @@ def login():
     email.send_keys(Keys.RETURN)
     time.sleep(1)
     password = driver.find_element_by_class_name("zHQkBf")
-    password.send_keys("An8221101")
+    password.send_keys("")
     password.send_keys(Keys.RETURN)
     time.sleep(1)
 

@@ -50,12 +50,12 @@ def unitTest():
 def grabData():
     cursor = database.displayDataBase()
     for row in cursor:
-       print ("It = ", row[0])
-       print ("Freaking = ", row[1])
-       print ("Worked = ", row[2])
-       print ("OMG = ", row[3])
-       print ("Python = ", row[4])
-       print ("Rocks", row[5], "\n")
+       print ("ID = ", row[0])
+       print ("Order = ", row[1])
+       print ("Samples = ", row[2])
+       print ("Tests = ", row[3])
+       print ("DueDate = ", row[4])
+       print ("OnTrello =  ", row[5], "\n")
     print (cursor)
 
     

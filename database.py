@@ -29,7 +29,6 @@ def addToDataBase(ordernumber, samples, tests, duedate):
     
 def displayDataBase():
     cursor = conn.execute("SELECT id, ordernumber, samples, tests, duedate, ontrello from QBENCHTEST")
-    print(cursor)
     '''for row in cursor:
        print ("ID = ", row[0])
        print ("ORDER = ", row[1])
